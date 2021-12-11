@@ -25,6 +25,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "preserveSymlinks": true,
             "aot": true,
             "assets": [
               "src/favicon.ico",
@@ -122,6 +123,86 @@
             "production": {
               "devServerTarget": "formula-one:serve:production"
             }
+          }
+        }
+      }
+    },
+    "formula-one-lib": {
+      "projectType": "library",
+      "root": "projects/formula-one-lib",
+      "sourceRoot": "projects/formula-one-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/formula-one-lib/tsconfig.lib.json",
+            "project": "projects/formula-one-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/formula-one-lib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/formula-one-lib/src/test.ts",
+            "tsConfig": "projects/formula-one-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/formula-one-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/formula-one-lib/tsconfig.lib.json",
+              "projects/formula-one-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "formula-one-types": {
+      "projectType": "library",
+      "root": "projects/formula-one-types",
+      "sourceRoot": "projects/formula-one-types/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/formula-one-types/tsconfig.lib.json",
+            "project": "projects/formula-one-types/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/formula-one-types/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/formula-one-types/src/test.ts",
+            "tsConfig": "projects/formula-one-types/tsconfig.spec.json",
+            "karmaConfig": "projects/formula-one-types/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/formula-one-types/tsconfig.lib.json",
+              "projects/formula-one-types/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }

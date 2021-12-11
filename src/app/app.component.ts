@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Entity } from './models/entity.model';
-import { SeasonSchedule } from './models/schedule.model';
-import { SchedulesService } from './services/schedules.service';
+import { Circuits, CircuitsService, Entity } from '@formulaone/types';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +7,17 @@ import { SchedulesService } from './services/schedules.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  constructor(private schedulesService: SchedulesService) { }
+  constructor(
+    private circuitsService: CircuitsService
+  ) { }
 
-// TODO : add PWA feature
-
+  // TODO : add PWA feature
+  // TODO : page size and offset
   ngOnInit() {
-    this.schedulesService.getSeasonSchedule({ year: 2021 })
-      .subscribe((res: Entity<SeasonSchedule>) => {
-        console.log(res.RaceTable.Races);
-      });
+    this.circuitsService.getCircuits()
+      .subscribe((res: Entity<Circuits>) => {
+        console.log(res);
+      })
   }
 
 }

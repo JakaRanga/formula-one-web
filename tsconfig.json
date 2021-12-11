@@ -7,6 +7,16 @@
     "forceConsistentCasingInFileNames": true,
     "strict": false,
     "noImplicitReturns": true,
+    "paths": {
+      "formula-one-lib": [
+        "dist/formula-one-lib/formula-one-lib",
+        "dist/formula-one-lib"
+      ],
+      "formula-one-types": [
+        "dist/formula-one-types/formula-one-types",
+        "dist/formula-one-types"
+      ]
+    },
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
