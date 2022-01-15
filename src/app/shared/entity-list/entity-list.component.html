@@ -1,0 +1,13 @@
+<ng-container *ngIf="ready">
+    <ng-content></ng-content>
+
+    <div class="p-2 d-flex">
+        <div>
+            {{ from }} - {{ to }} Total {{ total }}
+        </div>
+        <div class="ml-2">
+            <button class="mr-2" (click)="previous.emit()">Previous</button>
+            <button (click)="next.emit()">Next</button>
+        </div>
+    </div>
+</ng-container>

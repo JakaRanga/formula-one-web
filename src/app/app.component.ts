@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Circuits, CircuitsService, Entity } from '@formulaone/types';
+import { ToastService } from 'ngx-jaka';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +9,18 @@ import { Circuits, CircuitsService, Entity } from '@formulaone/types';
 })
 export class AppComponent implements OnInit {
   constructor(
-    private circuitsService: CircuitsService
+    private toastService: ToastService
   ) { }
 
   // TODO : add PWA feature
   // TODO : page size and offset
   ngOnInit() {
-    this.circuitsService.getCircuits()
-      .subscribe((res: Entity<Circuits>) => {
-        console.log(res);
-      })
+    // this.circuitsService.getCircuitsById({
+    //   circuitId: 'adelaide'
+    // })
+    //   .subscribe((res: Entity<Circuits>) => {
+    //     console.log(res);
+    //   });
   }
 
 }
