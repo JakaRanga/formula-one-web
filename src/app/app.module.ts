@@ -12,13 +12,17 @@ import { EntityListComponent } from './shared/entity-list/entity-list.component'
 import { DriversComponent } from './components/drivers/drivers.component';
 import { NgxJakaModule } from 'ngx-jaka';
 import { ToolbarComponent } from './layout/toolbar/toolbar.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
+import { ContentComponent } from './layout/content/content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EntityListComponent,
     DriversComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    SidebarComponent,
+    ContentComponent
   ],
   imports: [
     FormulaOneTypesModule.forRoot(environment),
